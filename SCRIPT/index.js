@@ -1,12 +1,12 @@
 document.getElementById('btn-biologia').onclick = function() {
-    window.location.href = 'HTML/biologia.html';
+    window.location.href = 'biologia.html';
 };
 document.getElementById('btn-quimica').onclick = function() {
-    window.location.href = 'HTML/quimica.html';
+    window.location.href = 'quimica.html';
 };
 document.getElementById('btn-fisica').onclick = function() {
-    window.location.href = 'HTML/fisica.html';
+    window.location.href = 'fisica.html';
 };
 document.getElementById('btn-robotica').onclick = function() {
-    window.location.href = 'HTML/robotica.html';
+    window.location.href = 'robotica.html';
 };
