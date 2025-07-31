@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.biology-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.biology-bg .leaf {
+    position: absolute;
+    width: 80px; height: 80px;
+    background: url('../IMG/leaf.png') no-repeat center/contain;
+    opacity: 0.18;
+    animation: leafFloat 10s infinite linear;
+}
+.biology-bg .leaf:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s;}
+.biology-bg .leaf:nth-child(2) { left: 70%; top: 10%; animation-delay: 2s;}
+.biology-bg .leaf:nth-child(3) { left: 30%; top: 60%; animation-delay: 4s;}
+.biology-bg .leaf:nth-child(4) { left: 80%; top: 80%; animation-delay: 1s;}
+.biology-bg .leaf:nth-child(5) { left: 50%; top: 40%; animation-delay: 3s;}
+
+@keyframes leafFloat {
+    0% { transform: translateY(0) rotate(0deg);}
+    50% { transform: translateY(-30px) rotate(15deg);}
+    100% { transform: translateY(0) rotate(0deg);}
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(46,125,50,0.15);
+    padding: 32px 24px;
+}
+
+.rotulo {
+    text-align: center;
+    color: #388e3c;
+    margin-bottom: 18px;
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 0 2px 12px #a5d6a7;
+}
+
+.subtitle {
+    text-align: center;
+    color: #43a047;
+    margin-bottom: 30px;
+}
+
+.diplomas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.diploma-item {
+    position: relative;
+    background: #c8e6c9;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(46,125,50,0.08);
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.diploma-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 24px rgba(46,125,50,0.22);
+}
+
+.diploma-item img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 12px rgba(46,125,50,0.18);
+}
+
+.diploma-item span {
+    display: block;
+    color: #2e7d32;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(46,125,50,0.25);
+    display: block;
+    margin: auto;
+    background: #fff; /* Fondo blanco para diplomas con transparencia */
+    padding: 16px;
+}
+
+.close {
+    position: absolute;
+    top: 32px;
+    right: 48px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.diploma-preview {
+    display: none !important;
+}
+
+/* Muestra la vista previa a la izquierda en la segunda columna */
+/*.diploma-item:nth-child(2n):hover .diploma-preview {
+    left: auto;
+    right: 105%;
+}*/
+
+.leaf-animate {
+    color: #43a047;
+    margin: 0 8px;
+    font-size: 2.2rem;
+    animation: leafBounce 1.2s infinite alternate;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.leaf-rotate {
+    animation: leafRotate 2.5s infinite linear;
+}
+
+.leaf-flip {
+    animation: leafFlip 1.8s infinite alternate;
+}
+
+.leaf-rotate2 {
+    animation: leafRotate2 2s infinite alternate;
+}
+
+@keyframes leafBounce {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-12px);}
+}
+
+@keyframes leafRotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes leafFlip {
+    0% { transform: scaleX(1);}
+    100% { transform: scaleX(-1);}
+}
+
+@keyframes leafRotate2 {
+    0% { transform: rotate(-20deg);}
+    100% { transform: rotate(20deg);}
+}
+
+.btn-volver-arriba {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    background: #388e3c;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(46,125,50,0.18);
+    z-index: 100;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-volver-arriba:hover {
+    background: #2e7d32;
+    transform: translateY(-2px);
+}

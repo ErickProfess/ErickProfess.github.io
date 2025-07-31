@@ -1,0 +1,129 @@
+body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+.background-decor {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.07;
+}
+
+.animated-pattern-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.animated-pattern-bg span {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    background: #4fc3f7;
+    animation: float 8s infinite linear;
+}
+
+.animated-pattern-bg span:nth-child(1) {
+    width: 80px; height: 80px; left: 10%; top: 20%; animation-delay: 0s;
+}
+.animated-pattern-bg span:nth-child(2) {
+    width: 60px; height: 60px; left: 30%; top: 60%; animation-delay: 2s;
+}
+.animated-pattern-bg span:nth-child(3) {
+    width: 100px; height: 100px; left: 70%; top: 40%; animation-delay: 4s;
+}
+.animated-pattern-bg span:nth-child(4) {
+    width: 50px; height: 50px; left: 80%; top: 80%; animation-delay: 1s;
+}
+.animated-pattern-bg span:nth-child(5) {
+    width: 90px; height: 90px; left: 50%; top: 10%; animation-delay: 3s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Asegúrate que el contenedor esté por encima del fondo animado */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.12);
+    padding: 48px 36px 36px 36px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.icon {
+    color: #3498db;
+    filter: drop-shadow(0 2px 4px rgba(44,62,80,0.15));
+}
+
+h1 {
+    color: #2d3e50;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #6c7a89;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+button {
+    padding: 16px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #3498db;
+    color: #fff;
+    transition: background 0.2s, transform 0.2s;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+button:hover {
+    background: #217dbb;
+    transform: translateY(-2px) scale(1.03);
+}

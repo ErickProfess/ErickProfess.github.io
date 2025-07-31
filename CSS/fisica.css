@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f3e5f5;
+    color: #6a1b9a;
+}
+
+.physics-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.physics-bg .atom {
+    position: absolute;
+    width: 80px; height: 80px;
+    background: url('../IMG/atom.png') no-repeat center/contain;
+    opacity: 0.18;
+    animation: atomFloat 10s infinite linear;
+}
+.physics-bg .atom:nth-child(1) { left: 14%; top: 22%; animation-delay: 0s;}
+.physics-bg .atom:nth-child(2) { left: 72%; top: 16%; animation-delay: 2s;}
+.physics-bg .atom:nth-child(3) { left: 34%; top: 66%; animation-delay: 4s;}
+.physics-bg .atom:nth-child(4) { left: 86%; top: 82%; animation-delay: 1s;}
+.physics-bg .atom:nth-child(5) { left: 58%; top: 44%; animation-delay: 3s;}
+
+@keyframes atomFloat {
+    0% { transform: translateY(0) rotate(0deg);}
+    50% { transform: translateY(-30px) rotate(15deg);}
+    100% { transform: translateY(0) rotate(0deg);}
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(106,27,154,0.13);
+    padding: 32px 24px;
+}
+
+.rotulo {
+    text-align: center;
+    color: #6a1b9a;
+    margin-bottom: 18px;
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 0 2px 12px #ce93d8;
+}
+
+.atom-animate {
+    color: #8e24aa;
+    margin: 0 8px;
+    font-size: 2.2rem;
+    animation: atomBounce 1.2s infinite alternate;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.atom-rotate {
+    animation: atomRotate 2.5s infinite linear;
+}
+
+.atom-flip {
+    animation: atomFlip 1.8s infinite alternate;
+}
+
+.atom-rotate2 {
+    animation: atomRotate2 2s infinite alternate;
+}
+
+@keyframes atomBounce {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-12px);}
+}
+
+@keyframes atomRotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes atomFlip {
+    0% { transform: scaleX(1);}
+    100% { transform: scaleX(-1);}
+}
+
+@keyframes atomRotate2 {
+    0% { transform: rotate(-20deg);}
+    100% { transform: rotate(20deg);}
+}
+
+.subtitle {
+    text-align: center;
+    color: #6a1b9a;
+    margin-bottom: 30px;
+}
+
+.diplomas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.diploma-item {
+    position: relative;
+    background: #e1bee7;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(106,27,154,0.08);
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.diploma-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 24px rgba(106,27,154,0.22);
+}
+
+.diploma-item img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 12px rgba(106,27,154,0.18);
+}
+
+.diploma-item span {
+    display: block;
+    color: #6a1b9a;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(106,27,154,0.25);
+    display: block;
+    margin: auto;
+    background: #fff; /* Fondo blanco para diplomas con transparencia */
+}
+
+.close {
+    position: absolute;
+    top: 32px;
+    right: 48px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.btn-volver-arriba {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    background: #8e24aa;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(106,27,154,0.18);
+    z-index: 100;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-volver-arriba:hover {
+    background: #6a1b9a;
+    transform: scale(1.06);
+}
